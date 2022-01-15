@@ -1,28 +1,35 @@
 <template>
-  <div>
-    <navbar id="navbar" />
-    <div class="container-fluid">
-      <div class="row d-flex justify-content-center">
-        <div class="sidebar col-3 p-0">
-          <h1 class="text-center text-light mt-4">Favorite List</h1>
-          <favorite-list :movies="favoriteMovies"></favorite-list>
-        </div>
+  <div class="wrapper">
+    <div>
+      <navbar id="navbar" />
+      <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+          <div class="sidebar col-3 p-0">
+            <h1 class="text-center text-light mt-4">Favorite List</h1>
+            <favorite-list :movies="favoriteMovies"></favorite-list>
+          </div>
 
-        <div class="movie-list col-9 main">
-          <div class="mb-3 text-center">
-            <div class="d-flex justify-content-center align-items-center mb-5">
-              <div class="input mt-5">
-                <input
-                  @keyup="searchMovie"
-                  v-model="searchText"
-                  type="text"
-                  id="search-input"
-                  placeholder="I'm looking for..."
-                />
+          <div class="movie-list col-9 main">
+            <div class="mb-3 text-center">
+              <div
+                class="d-flex justify-content-center align-items-center mb-5"
+              >
+                <div class="input mt-5">
+                  <input
+                    @keyup="searchMovie"
+                    v-model="searchText"
+                    type="text"
+                    id="search-input"
+                    placeholder="I'm looking for..."
+                  />
+                </div>
               </div>
-            </div>
 
-            <movie-list :movies="searchedMovies"></movie-list>
+              <movie-list
+                :loading="loading"
+                :movies="searchedMovies"
+              ></movie-list>
+            </div>
           </div>
         </div>
       </div>
@@ -49,6 +56,7 @@ export default {
     ...mapGetters({
       searchedMovies: "movies/_searchedMovies",
       favoriteMovies: "movies/_favoriteList",
+      loading: "movies/_isLoading",
     }),
     isMobile() {
       return this.windowWidth < 992;

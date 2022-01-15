@@ -1,8 +1,6 @@
 <template>
   <div class="wrapper">
     <div>
-      <navbar id="navbar" />
-
       <div class="container-fluid">
         <div class="row d-flex justify-content-center">
           <div class="sidebar col-3 p-0">
@@ -13,9 +11,24 @@
           <div class="movie-list col-9 main">
             <div class="mb-3 text-center">
               <div
-                class="d-flex justify-content-center align-items-center mb-5"
+                class="
+                  d-flex
+                  flex-column
+                  justify-content-center
+                  align-items-center
+                  mb-5
+                "
               >
+                <button
+                  type="button"
+                  class="btn modal-btn mt-5"
+                  data-bs-toggle="modal"
+                  data-bs-target="#exampleModal"
+                >
+                  Favorited Movies
+                </button>
                 <div class="input mt-5">
+                  <h1 class="text-light mb-3">De marke App</h1>
                   <input
                     @keyup="searchMovie"
                     v-model="searchText"
@@ -23,14 +36,6 @@
                     id="search-input"
                     placeholder="I'm looking for..."
                   />
-                  <button
-                    type="button"
-                    class="btn btn-primary"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Launch demo modal
-                  </button>
                 </div>
               </div>
 
@@ -44,7 +49,7 @@
       </div>
 
       <!-- Modal -->
-
+      <modal></modal>
     </div>
   </div>
 </template>
@@ -54,10 +59,11 @@ import MovieList from "@/views/MovieList";
 import FavoriteList from "@/components/FavoriteList";
 import { mapGetters } from "vuex";
 import { debounce } from "debounce";
-import Navbar from "@/components/Navbar";
+
+import Modal from "@/components/Modal";
 export default {
   name: "Home",
-  components: { Navbar, MovieList, FavoriteList },
+  components: { Modal, MovieList, FavoriteList },
   data() {
     return {
       searchText: null,
@@ -100,8 +106,32 @@ export default {
   border-right: 1px solid #eee;
   min-height: 100vh;
 }
-#navbar {
+.modal-btn {
   display: none;
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #151f30;
+  font-size: 14px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.5s ease;
+  transition-property: color, background-color, border-color;
+  border: none;
+}
+.modal-btn:hover {
+  color: #151f30;
+  background-color: #fff;
+}
+.modal-btn:focus {
+  outline: none;
 }
 .input {
   width: 50%;
@@ -125,7 +155,7 @@ export default {
   outline: none;
 }
 @media (max-width: 992px) {
-  #navbar {
+  .modal-btn {
     display: block;
   }
   .sidebar {

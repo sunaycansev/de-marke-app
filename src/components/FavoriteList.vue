@@ -1,10 +1,8 @@
 <template>
   <div class="">
-    <!--    <movie-card-->
-    <!--      v-for="movie in movies"-->
-    <!--      :key="movie.id"-->
-    <!--      :movie="movie"-->
-    <!--    ></movie-card>-->
+    <h3 v-if="!(movies.length > 0)" class="text-light text-center mt-5">
+      No favorite movies
+    </h3>
     <favourited-movie-card
       v-for="movie in movies"
       :key="movie.id"

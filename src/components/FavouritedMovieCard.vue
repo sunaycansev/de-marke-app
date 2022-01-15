@@ -34,16 +34,9 @@
           </p>
         </div>
         <a
-          v-if="!isFavorited(movie.id)"
-          href="#"
-          class="btn btn-success d-flex justify-content-center"
-          @click="addToFavorite(movie)"
-          >Add to Favourite</a
-        >
-        <a
           v-if="isFavorited(movie.id)"
           href="#"
-          class="btn btn-danger d-flex justify-content-center"
+          class="btn remove-btn d-flex justify-content-center"
           @click="removeFromFavorite(movie)"
           >Remove from Favourite</a
         >
@@ -70,9 +63,6 @@ export default {
     },
   },
   methods: {
-    addToFavorite(movie) {
-      this.$store.dispatch("movies/addToFavoriteList", movie);
-    },
     removeFromFavorite(movie) {
       this.$store.dispatch("movies/removeFromFavoriteList", movie);
     },
@@ -92,6 +82,28 @@ export default {
   background-size: cover;
   width: 210px;
   height: 250px;
+}
+
+.card .remove-btn {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #151f30;
+  font-size: 14px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.5s ease;
+  transition-property: color, background-color, border-color;
+  border: none;
+}
+.card .remove-btn:hover {
+  background: linear-gradient(to right, #ec008c, #fc6767);
 }
 
 @media (max-width: 1200px) {

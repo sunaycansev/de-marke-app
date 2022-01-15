@@ -1,6 +1,6 @@
 <template>
   <div class="col d-flex justify-content-center align-items-center">
-    <div class="card m-2 bg-dark text-light" style="width: 12rem">
+    <div class="card m-2 bg-dark text-light rounded-3" style="width: 12rem">
       <div class="card-top d-flex justify-content-center align-items-center">
         <img
           class="card-img-top"
@@ -36,14 +36,14 @@
         <div class="d-flex justify-content-center align-items-center">
           <button
             v-if="!isFavorited(movie.id)"
-            class="px-4 btn btn-success"
+            class="px-4 btn add-btn"
             @click="addToFavorite(movie)"
           >
             Add to Favourite
           </button>
           <button
             v-if="isFavorited(movie.id)"
-            class="btn btn-danger px-4 lh-sm"
+            class="btn remove-btn px-4 lh-sm"
             @click="removeFromFavorite(movie)"
           >
             Remove from Favourite
@@ -91,5 +91,47 @@ export default {
   background-size: cover;
   width: 190px;
   height: 230px;
+}
+.card .add-btn {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #151f30;
+  font-size: 14px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.5s ease;
+  transition-property: color, background-color, border-color;
+  border: none;
+}
+.card .add-btn:hover {
+  background: linear-gradient(to right, #02aab0, #00cdac);
+}
+.card .remove-btn {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  width: 100%;
+  min-width: 160px;
+  height: 50px;
+  border-radius: 16px;
+  background-color: #151f30;
+  font-size: 14px;
+  color: #e0e0e0;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: 0.7s ease;
+  transition-property: color, background-color, border-color;
+  border: none;
+}
+.card .remove-btn:hover {
+  background: linear-gradient(to right, #ec008c, #fc6767);
 }
 </style>

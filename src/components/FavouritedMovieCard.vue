@@ -1,11 +1,14 @@
 <template>
   <div class="col d-flex justify-content-center align-items-center">
-    <div class="card p-3 m-2">
-      <img
-        class="card-img-top"
-        :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
-        :alt="movie.title"
-      />
+    <div class="card m-2 bg-dark text-light">
+      <div class="card-top d-flex justify-content-center align-items-center">
+        <img
+          class="card-img-top"
+          :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
+          :alt="movie.title"
+        />
+      </div>
+
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
         <p class="card-text">
@@ -79,10 +82,16 @@ export default {
 
 <style scoped>
 .card {
-  width: 80%;
+  max-width: 14rem;
 }
 .card a {
   font-size: 13px;
+}
+.card .card-img-top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 210px;
+  height: 250px;
 }
 
 @media (max-width: 1200px) {

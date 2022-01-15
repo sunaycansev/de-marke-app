@@ -1,11 +1,14 @@
 <template>
   <div class="col d-flex justify-content-center align-items-center">
-    <div class="card m-2" style="width: 18rem">
-      <img
-        class="card-img-top"
-        :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
-        :alt="movie.title"
-      />
+    <div class="card m-2 bg-dark text-light" style="width: 12rem">
+      <div class="card-top d-flex justify-content-center align-items-center">
+        <img
+          class="card-img-top"
+          :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`"
+          :alt="movie.title"
+        />
+      </div>
+
       <div class="card-body">
         <h5 class="card-title">{{ movie.title }}</h5>
         <p class="card-text">
@@ -30,20 +33,22 @@
             {{ movie.vote_average }}
           </p>
         </div>
-        <a
-          v-if="!isFavorited(movie.id)"
-          href="#"
-          class="btn btn-success d-flex justify-content-center"
-          @click="addToFavorite(movie)"
-          >Add to Favourite</a
-        >
-        <a
-          v-if="isFavorited(movie.id)"
-          href="#"
-          class="btn btn-danger d-flex justify-content-center"
-          @click="removeFromFavorite(movie)"
-          >Remove from Favourite</a
-        >
+        <div class="d-flex justify-content-center align-items-center">
+          <button
+            v-if="!isFavorited(movie.id)"
+            class="px-4 btn btn-success"
+            @click="addToFavorite(movie)"
+          >
+            Add to Favourite
+          </button>
+          <button
+            v-if="isFavorited(movie.id)"
+            class="btn btn-danger px-4 lh-sm"
+            @click="removeFromFavorite(movie)"
+          >
+            Remove from Favourite
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -77,4 +82,14 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.card button {
+  font-size: 13px;
+}
+.card .card-img-top {
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 190px;
+  height: 230px;
+}
+</style>

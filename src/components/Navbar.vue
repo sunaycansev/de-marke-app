@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <router-link class="navbar-brand" to="/">Navbar</router-link>
+      <router-link class="navbar-brand" to="/">Home</router-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -43,4 +43,20 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+.navbar-nav a {
+  font-size: 18px;
+  color: #e0e0e0;
+  line-height: 22px;
+  height: 22px;
+  align-items: center;
+  font-weight: 500;
+  transition: 0.5s ease;
+  transition-property: color, background-color, border-color;
+}
+.navbar-nav a:hover {
+  color: #2f80ed;
+  outline: none;
+  text-decoration: none;
+}
+</style>

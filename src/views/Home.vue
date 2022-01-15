@@ -3,25 +3,21 @@
     <navbar id="navbar" />
     <div class="container-fluid">
       <div class="row d-flex justify-content-center">
-        <div class="sidebar col-3">
-          <h1 class="text-center">Favorite List</h1>
+        <div class="sidebar col-3 p-0">
+          <h1 class="text-center text-light mt-4">Favorite List</h1>
           <favorite-list :movies="favoriteMovies"></favorite-list>
         </div>
 
         <div class="movie-list col-9 main">
           <div class="mb-3 text-center">
             <div class="d-flex justify-content-center align-items-center mb-5">
-              <div class="input">
-                <label for="search-input" class="form-label fw-bold fs-1"
-                  >Type for search</label
-                >
+              <div class="input mt-5">
                 <input
                   @keyup="searchMovie"
                   v-model="searchText"
                   type="text"
-                  class="form-control"
                   id="search-input"
-                  placeholder="Lord of the Rings"
+                  placeholder="I'm looking for..."
                 />
               </div>
             </div>
@@ -89,6 +85,24 @@ export default {
 }
 .input {
   width: 50%;
+}
+#search-input {
+  height: 40px;
+  border-radius: 16px;
+  background-color: #151f30;
+  border: none;
+  padding: 0 60px 0 20px;
+  font-size: 14px;
+  color: #fff;
+  appearance: none;
+  box-shadow: none;
+  transition: 0.5s ease;
+  transition-property: color, border-color;
+  width: 100%;
+}
+
+#search-input:focus {
+  outline: none;
 }
 @media (max-width: 992px) {
   #navbar {

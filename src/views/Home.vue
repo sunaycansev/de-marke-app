@@ -2,6 +2,7 @@
   <div class="wrapper">
     <div>
       <navbar id="navbar" />
+
       <div class="container-fluid">
         <div class="row d-flex justify-content-center">
           <div class="sidebar col-3 p-0">
@@ -22,6 +23,14 @@
                     id="search-input"
                     placeholder="I'm looking for..."
                   />
+                  <button
+                    type="button"
+                    class="btn btn-primary"
+                    data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"
+                  >
+                    Launch demo modal
+                  </button>
                 </div>
               </div>
 
@@ -33,6 +42,9 @@
           </div>
         </div>
       </div>
+
+      <!-- Modal -->
+
     </div>
   </div>
 </template>

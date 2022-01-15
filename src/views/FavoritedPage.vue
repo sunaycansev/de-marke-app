@@ -3,6 +3,7 @@
     <navbar></navbar>
     <div class="container d-flex justify-content-center align-items-center">
       <div class="row">
+        <h1 class="text-light mt-3">Favorited Page</h1>
         <movie-card
           v-for="movie in movies"
           :key="movie.id"

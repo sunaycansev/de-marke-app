@@ -86,6 +86,10 @@ export default {
 .card button {
   font-size: 13px;
 }
+.card:hover {
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(255, 255, 255, 0.86);
+  box-shadow: 0px 0px 19px -2px rgba(255, 255, 255, 0.86);
+}
 .card .card-img-top {
   background-repeat: no-repeat;
   background-size: cover;
@@ -101,8 +105,8 @@ export default {
   min-width: 160px;
   height: 50px;
   border-radius: 16px;
-  background-color: #151f30;
-  font-size: 14px;
+  background: linear-gradient(to right, #02aab0, #00cdac);
+  font-size: 13px;
   color: #e0e0e0;
   text-transform: uppercase;
   font-weight: 500;
@@ -111,7 +115,7 @@ export default {
   border: none;
 }
 .card .add-btn:hover {
-  background: linear-gradient(to right, #02aab0, #00cdac);
+  background: linear-gradient(to right, #56ab2f, #a8e063);
 }
 .card .remove-btn {
   flex-direction: row;
@@ -122,8 +126,8 @@ export default {
   min-width: 160px;
   height: 50px;
   border-radius: 16px;
-  background-color: #151f30;
-  font-size: 14px;
+  background: linear-gradient(to right, #ec008c, #fc6767);
+  font-size: 13px;
   color: #e0e0e0;
   text-transform: uppercase;
   font-weight: 500;
@@ -132,6 +136,6 @@ export default {
   border: none;
 }
 .card .remove-btn:hover {
-  background: linear-gradient(to right, #ec008c, #fc6767);
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
 }
 </style>

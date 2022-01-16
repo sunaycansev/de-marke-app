@@ -33,13 +33,13 @@
             {{ movie.vote_average }}
           </p>
         </div>
-        <a
+        <button
           v-if="isFavorited(movie.id)"
-          href="#"
           class="btn remove-btn d-flex justify-content-center"
           @click="removeFromFavorite(movie)"
-          >Remove from Favourite</a
         >
+          Remove from Favourite
+        </button>
       </div>
     </div>
   </div>
@@ -74,6 +74,10 @@ export default {
 .card {
   max-width: 14rem;
 }
+.card:hover {
+  -webkit-box-shadow: 0px 0px 19px -2px rgba(255, 255, 255, 0.86);
+  box-shadow: 0px 0px 19px -2px rgba(255, 255, 255, 0.86);
+}
 .card a {
   font-size: 13px;
 }
@@ -93,17 +97,17 @@ export default {
   min-width: 160px;
   height: 50px;
   border-radius: 16px;
-  background-color: #151f30;
-  font-size: 14px;
+  background: linear-gradient(to right, #ec008c, #fc6767);
+  font-size: 13px;
   color: #e0e0e0;
   text-transform: uppercase;
   font-weight: 500;
-  transition: 0.5s ease;
-  transition-property: color, background-color, border-color;
+  transition: all 0.5s ease-in;
   border: none;
 }
+
 .card .remove-btn:hover {
-  background: linear-gradient(to right, #ec008c, #fc6767);
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
 }
 
 @media (max-width: 1200px) {

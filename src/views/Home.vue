@@ -4,7 +4,9 @@
       <div class="container-fluid">
         <div class="row d-flex justify-content-center">
           <div class="sidebar col-3 p-0">
-            <h1 class="text-center text-light mt-4">Favorite List</h1>
+            <h2 class="text-center text-light mt-4 font-monospace">
+              Favorite List
+            </h2>
             <favorite-list :movies="favoriteMovies"></favorite-list>
           </div>
 
@@ -28,13 +30,15 @@
                   Favorited Movies
                 </button>
                 <div class="input mt-5">
-                  <h1 class="text-light mb-3">De marke App</h1>
+                  <h2 class="text-light mb-3 font-monospace">
+                    Movie Search App
+                  </h2>
                   <input
                     @keyup="searchMovie"
                     v-model="searchText"
                     type="text"
                     id="search-input"
-                    placeholder="I'm looking for..."
+                    placeholder="Search"
                   />
                 </div>
               </div>
@@ -55,7 +59,7 @@
 </template>
 
 <script>
-import MovieList from "@/views/MovieList";
+import MovieList from "@/components/MovieList";
 import FavoriteList from "@/components/FavoriteList";
 import { mapGetters } from "vuex";
 import { debounce } from "debounce";
@@ -141,7 +145,7 @@ export default {
   border-radius: 16px;
   background-color: #151f30;
   border: none;
-  padding: 0 60px 0 20px;
+  padding: 0 10px 0 15px;
   font-size: 14px;
   color: #fff;
   appearance: none;

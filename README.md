@@ -5,8 +5,8 @@
 
 You can add the movie you want to your favorite list in this project, where movie information is obtained and displayed on the page via API, and the button changes dynamically depending on whether the movie is in the favorite list. The movies you add to your favorites work in sync with the local storage.
 
-![screenshot](./src/assets/screenshot-2.png)
 ![screenshot](./src/assets/screenshot-1.png)
+![screenshot](./src/assets/screenshot-2.png)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
